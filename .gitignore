@@ -2,3 +2,5 @@ node_modules
 miniblog
 static/dist
 static/css/style.*
+
+**/.DS_Store

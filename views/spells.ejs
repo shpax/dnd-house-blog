@@ -14,40 +14,5 @@
   </div>
 </div>
 <div class="site-section bg-light">
-  <div class="container" id="container">
-    <div class="row">
-      <div class="col-md-4 col-sm-12">
-        <ul class="list-group list-group-horizontal">
-          <li class="list-group-item">
-            Волшебник
-          </li>
-          <li class="list-group-item">Друид</li>
-          <li class="list-group-item">Колдун</li>
-          <li class="list-group-item">Воин</li>
-          <li class="list-group-item">Плут</li>
-        </ul>
-      </div>
-      <div class="col-md-8 col-sm-12">
-        <table
-          class="table table-hover table-borderless shadow-sm bg-white rounded"
-        >
-          <thead>
-            <tr>
-              <th scope="col">Ур.</th>
-              <th scope="col">Название</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% data.forEach(item => { %>
-
-            <tr>
-              <th scope="row"><%= item.level %></th>
-              <td><%= item.name %></td>
-            </tr>
-            <% }) %>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
+  <div class="container" id="container"></div>
 </div>
