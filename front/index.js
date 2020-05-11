@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 async function initSpellsApp() {
-  const spellsContainer = document.getElementById("container");
+  const spellsContainer = document.getElementById("spells-container");
 
   if (spellsContainer) {
     const [{ default: Spells }, { default: data }] = await Promise.all([

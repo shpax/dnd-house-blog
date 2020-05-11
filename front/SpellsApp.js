@@ -4,20 +4,12 @@ import { classStorage, levelStorage } from "./models/spells";
 import SingleSelector from "./components/SingleSelector";
 import { LEVEL_LIST, CLASS_LIST } from "./constants/spellsFilters";
 import SpellCard from "./components/SpellCard";
+import { vClass, vLevel, vName } from "./helpers/spellsViewFilters";
 
-const vClass = (selectedClass, { classes }) =>
-  selectedClass === "" || classes.includes(selectedClass);
-
-const vName = (searchValue, { name }) =>
-  searchValue === "" ||
-  name.toLowerCase().search(searchValue.toLowerCase()) !== -1;
-
-const vLevel = (selectedLevel, { level }) =>
-  selectedLevel === "" || selectedLevel == level;
+const titles = ["Ур.", "Название"];
 
 export default function Spells(props) {
   const { data } = props;
-  const titles = ["Ур.", "Название"];
   const [selectedClass, setSelectedClass] = useState(classStorage.get());
   const [selectedLevel, setSelectedLevel] = useState(levelStorage.get());
   const [searchValue, setSearchValue] = useState("");
