@@ -1,0 +1,4 @@
+node_modules
+miniblog
+static/dist
+static/css/style.*
