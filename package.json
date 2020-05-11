@@ -10,7 +10,8 @@
     "dev:nodemon": "nodemon index.js",
     "dev:webpack": "webpack --watch --mode=development",
     "build": "webpack --mode=production; sass static/scss/style.scss static/css/style.css",
-    "prod:start": "NODE_ENV=production pm2 config/pm2.prod.config.js"
+    "prod:start": "NODE_ENV=production pm2 start config/pm2.prod.config.js",
+    "prod:start": "NODE_ENV=production pm2 stop config/pm2.prod.config.js"
   },
   "keywords": [],
   "author": "",
