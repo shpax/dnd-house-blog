@@ -3,6 +3,9 @@ module.exports = {
     {
       name: "dnd-house-blog",
       script: "./index.js",
+      env: {
+        PORT: 4001,
+      },
     },
   ],
 };
