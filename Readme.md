@@ -23,5 +23,6 @@ and within **VS Code**
 ### Local Development
 
 ```
+npm i
 npm run dev
 ```
