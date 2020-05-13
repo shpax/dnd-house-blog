@@ -6,11 +6,11 @@
 }
 .site-cover {
   background-size: cover;
-  background-position: top center;
+  background-position: center;
   position: relative;
   &.overlay {
     &:before {
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.5);
       position: absolute;
       content: "";
       top: 0;
@@ -24,7 +24,7 @@
   }
   &,
   .same-height {
-    padding: 3em 0;
+    padding: 7em 0;
   }
   .post-entry {
     .post-meta {

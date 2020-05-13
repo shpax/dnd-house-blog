@@ -9,7 +9,7 @@
 
 <header class="site-navbar" role="banner">
   <div class="container">
-    <div class="row align-items-center">
+    <div class="row align-items-center position-relative">
       <div class="col-12 search-form-wrap js-search-form">
         <form method="get" action="#">
           <input
@@ -26,20 +26,17 @@
 
       <div class="col-md-4 col-8 site-logo">
         <a href="/" class="text-black h2 mb-0 text-center">
-          <img src="/static/images/d20.png" class="img-fluid" />
-          <span>D&D House</span>
+          <img src="<%= settings.logo %>" class="img-fluid" />
+          <span><%= settings.title %></span>
         </a>
       </div>
 
       <div class="col-md-8 col-4 text-right">
         <nav class="site-navigation" role="navigation">
           <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block mb-0">
-            <li><a href="/">Главная</a></li>
-            <li><a href="/blog">Блог</a></li>
-            <li><a href="/classes">Классы</a></li>
-            <li><a href="/monsters">Монстры</a></li>
-            <li><a href="/items">Предметы</a></li>
-            <li><a href="/spells">Заклинания</a></li>
+            <% settings.navigation.forEach(nav => { %>
+            <li><a href="<%= nav.url %>"><%= nav.label %> </a></li>
+            <% }) %>
             <li class="d-none d-lg-inline-block">
               <a href="#" class="js-search-toggle"
                 ><span class="icon-search"></span

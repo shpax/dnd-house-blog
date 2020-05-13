@@ -21,6 +21,8 @@
     "@babel/preset-env": "^7.9.6",
     "@babel/preset-react": "^7.9.4",
     "@koa/router": "^8.0.8",
+    "@tryghost/content-api": "^1.4.1",
+    "config": "^3.3.1",
     "core-js": "^3.6.5",
     "koa": "^2.11.0",
     "koa-ejs": "^4.3.0",

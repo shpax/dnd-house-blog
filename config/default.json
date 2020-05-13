@@ -1,0 +1,7 @@
+{
+  "ghost": {
+    "url": "https://dnd.house",
+    "key": "<ask admin for api key>",
+    "version": "v3"
+  }
+}

@@ -1,0 +1,36 @@
+<div class="site-section">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-12">
+        <h2>Последние Записи</h2>
+      </div>
+    </div>
+    <div class="row">
+      <% posts.forEach(post => { %>
+      <div class="col-lg-4 mb-4">
+        <div class="entry2">
+          <a href="<%= post.url %>"
+            ><img src="<%= post.feature_image %>" class="img-fluid rounded"
+          /></a>
+          <div class="excerpt">
+            <% if (post.primary_tag) {%>
+            <span class="post-category text-white bg-secondary mb-3"
+              ><%= post.primary_tag.name %></span
+            >
+            <% } %>
+
+            <h2>
+              <a href="<%= post.url %>"><%= post.title %></a>
+            </h2>
+
+            <p>
+              <%= post.excerpt %>
+            </p>
+            <p><a href="<%= post.url %>">Читать полностью</a></p>
+          </div>
+        </div>
+      </div>
+      <% }); %>
+    </div>
+  </div>
+</div>
