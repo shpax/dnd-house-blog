@@ -16,4 +16,18 @@ async function initSpellsApp() {
   }
 }
 
+async function initItemsApp() {
+  const itemsContainer = document.getElementById("items-container");
+
+  if (itemsContainer) {
+    const [{ default: Items }, { default: data }] = await Promise.all([
+      import("./ItemsApp"),
+      import("../data/items.json"),
+    ]);
+
+    ReactDOM.render(<Items data={data} />, itemsContainer);
+  }
+}
+
+initItemsApp();
 initSpellsApp();
