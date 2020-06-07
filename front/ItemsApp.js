@@ -12,7 +12,7 @@ export default function Spells(props) {
   const { data } = props;
   const [selectedQuality, setSelectedQuality] = useState(qualityStorage.get());
   const [searchValue, setSearchValue] = useState("");
-  const [selectedItems, setItems] = useState([]);
+  const [selectedItems, setItems] = useState([data[0]]);
 
   useEffect(() => {
     qualityStorage.set(selectedQuality);

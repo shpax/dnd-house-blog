@@ -1,15 +1,71 @@
 const Router = require("@koa/router");
-const home = require("./home");
-const post = require("./post");
-const general = require("./settings");
+const { renderTemplate } = require("../helpers");
+const {
+  getPage,
+  getSettings,
+  getFeaturedPosts,
+  getSinglePost,
+} = require("../models/ghost");
 
 const router = new Router();
 
-router.use(general);
+/* HOME PAGE */
+router.get(
+  "/",
+  renderTemplate("home", async () => ({
+    settings: getSettings(),
+    page: getPage("home"),
+    posts: getFeaturedPosts(),
+  }))
+);
 
-router.get("/", home);
-router.get("/spells", (ctx) => ctx.render("spells", ctx));
-router.get("/items", (ctx) => ctx.render("items", ctx));
-router.get("/:slug", post);
+/* MONSTERS PAGE */
+router.get(
+  "/monsters",
+  renderTemplate("page-react", async () => ({
+    settings: getSettings(),
+    page: getPage("monsters"),
+    slug: "monsters",
+  }))
+);
+
+/* ITEMS PAGE */
+router.get(
+  "/items",
+  renderTemplate("page-react", async () => ({
+    settings: getSettings(),
+    page: getPage("items"),
+    slug: "items",
+  }))
+);
+
+/* SPELLS PAGE */
+router.get(
+  "/spells",
+  renderTemplate("page-react", async () => ({
+    settings: getSettings(),
+    page: getPage("spells"),
+    slug: "spells",
+  }))
+);
+
+/* STATES PAGE */
+router.get(
+  "/states",
+  renderTemplate("page-react", async () => ({
+    settings: getSettings(),
+    page: getPage("states"),
+    slug: "states",
+  }))
+);
+
+/* SINGLE POST PAGE */
+router.get(
+  "/blog/:slug",
+  renderTemplate("post", async ({ params: { slug } }) => ({
+    settings: getSettings(),
+    post: getSinglePost(slug),
+  }))
+);
 
 module.exports = router;

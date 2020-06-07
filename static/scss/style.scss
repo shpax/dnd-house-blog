@@ -1,6 +1,4 @@
-@import "bootstrap/functions";
-@import "bootstrap/variables";
-@import "bootstrap/mixins";
+@import "bootstrap/bootstrap";
 
 /* Base */
 @import "site-base";
@@ -8,3 +6,6 @@
 @import "site-navbar";
 /* Blocks */
 @import "site-blocks";
+
+/* GHost posts */
+@import "ghost-content";

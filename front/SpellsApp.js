@@ -13,7 +13,7 @@ export default function Spells(props) {
   const [selectedClass, setSelectedClass] = useState(classStorage.get());
   const [selectedLevel, setSelectedLevel] = useState(levelStorage.get());
   const [searchValue, setSearchValue] = useState("");
-  const [selectedSpells, setSpells] = useState([]);
+  const [selectedSpells, setSpells] = useState([data[0]]);
 
   useEffect(() => {
     classStorage.set(selectedClass);

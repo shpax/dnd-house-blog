@@ -1,0 +1,13 @@
+.post-content-body {
+  .kg-card {
+    img {
+      @extend .img-fluid;
+    }
+
+    // .kg-gallery-row {
+    //   .kg-gallery-image {
+    //     display: inline-block;
+    //   }
+    // }
+  }
+}
