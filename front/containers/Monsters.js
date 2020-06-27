@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Table, { TableRow } from "./components/Table";
-import { classStorage, levelStorage } from "./models/spells";
-import SingleSelector from "./components/SingleSelector";
-import { LEVEL_LIST, CLASS_LIST } from "./constants/spellsFilters";
-import SpellCard from "./components/SpellCard";
-import { vClass, vLevel, vName } from "./helpers/spellsViewFilters";
+import Table, { TableRow } from "../components/Table";
+import { classStorage, levelStorage } from "../models/spells";
+import SingleSelector from "../components/SingleSelector";
+import { LEVEL_LIST, CLASS_LIST } from "../constants/spellsFilters";
+import SpellCard from "../components/cards/Spell";
+import { vClass, vLevel, vName } from "../helpers/spellsViewFilters";
+import SearchInput from "../components/SearchInput";
 
 const titles = ["Ур.", "Название"];
 
@@ -57,24 +58,7 @@ export default function Spells(props) {
         </div>
       </div>
       <div className="col-12">
-        <div className="input-group mb-2">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Поиск"
-            aria-label="Поиск"
-            value={searchValue}
-            onChange={(event) => setSearchValue(event.target.value)}
-          />
-          <div className="input-group-append">
-            <span
-              className="input-group-text btn"
-              onClick={() => setSearchValue("")}
-            >
-              x
-            </span>
-          </div>
-        </div>
+        <SearchInput onChange={setSearchValue} value={searchValue} />
       </div>
 
       <div className="col-lg-7 col-12 mb-2">{cards}</div>

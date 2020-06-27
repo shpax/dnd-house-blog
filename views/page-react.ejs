@@ -16,6 +16,13 @@
     </div>
   </div>
 </div>
+
+<% if (page.html) { %>
+
+<div class="site-section bg-light">
+  <div class="container"><%- page.html %></div>
+</div>
+<% } %>
 <div class="site-section bg-light">
   <div class="container" id="<%= slug %>-container"></div>
 </div>

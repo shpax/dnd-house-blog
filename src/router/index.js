@@ -49,13 +49,23 @@ router.get(
   }))
 );
 
-/* STATES PAGE */
+/* CONDITIONS PAGE */
 router.get(
-  "/states",
+  "/conditions",
   renderTemplate("page-react", async () => ({
     settings: getSettings(),
-    page: getPage("states"),
-    slug: "states",
+    page: getPage("conditions"),
+    slug: "conditions",
+  }))
+);
+
+/* ABOUT PAGE */
+router.get(
+  "/about",
+  renderTemplate("page-react", async () => ({
+    settings: getSettings(),
+    page: getPage("about"),
+    slug: "about",
   }))
 );
 

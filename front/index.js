@@ -6,7 +6,7 @@ async function initSpellsApp() {
 
   if (spellsContainer) {
     const [{ default: Spells }, { default: data }] = await Promise.all([
-      import("./SpellsApp"),
+      import("./containers/Spells"),
       import("../data/spells.json"),
     ]);
 
@@ -21,7 +21,7 @@ async function initItemsApp() {
 
   if (itemsContainer) {
     const [{ default: Items }, { default: data }] = await Promise.all([
-      import("./ItemsApp"),
+      import("./containers/Items"),
       import("../data/items.json"),
     ]);
 
