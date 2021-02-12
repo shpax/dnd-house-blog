@@ -29,5 +29,19 @@ async function initItemsApp() {
   }
 }
 
+async function initMonstersApp() {
+  const monstersContainer = document.getElementById("monsters-container");
+
+  if (monstersContainer) {
+    const [{ default: Monsters }, { default: data }] = await Promise.all([
+      import("./containers/Monsters"),
+      import("../data/monsters.json"),
+    ]);
+
+    ReactDOM.render(<Monsters data={data} />, monstersContainer);
+  }
+}
+
 initItemsApp();
 initSpellsApp();
+initMonstersApp();

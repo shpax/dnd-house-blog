@@ -3,7 +3,7 @@ import Table, { TableRow } from "../components/Table";
 import { classStorage, levelStorage } from "../models/spells";
 import SingleSelector from "../components/SingleSelector";
 import { LEVEL_LIST, CLASS_LIST } from "../constants/spellsFilters";
-import SpellCard from "../components/cards/Spell";
+import MonsterCard from "../components/cards/Monster";
 import { vClass, vLevel, vName } from "../helpers/spellsViewFilters";
 import SearchInput from "../components/SearchInput";
 
@@ -38,14 +38,14 @@ export default function Spells(props) {
   });
 
   const cards = selectedSpells.map((item, i) => (
-    <SpellCard item={item} key={i} />
+    <MonsterCard item={item} key={i} />
   ));
 
   return (
     <div className="row">
       <div className="col-12">
         <div className="mb-2">
-          <SingleSelector
+          {/* <SingleSelector
             items={CLASS_LIST}
             value={selectedClass}
             onSelect={(value) => setSelectedClass(value)}
@@ -54,7 +54,7 @@ export default function Spells(props) {
             items={LEVEL_LIST}
             value={selectedLevel}
             onSelect={(value) => setSelectedLevel(value)}
-          />
+          /> */}
         </div>
       </div>
       <div className="col-12">
