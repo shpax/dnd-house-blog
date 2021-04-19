@@ -11,6 +11,10 @@ export default function SpellCard({ item }) {
             {item.level}
           </div>
           <div>
+            <b>Школа: </b>
+            {item.school}
+          </div>
+          <div>
             <b>Классы: </b>
             {item.classes.join(", ")}
           </div>
