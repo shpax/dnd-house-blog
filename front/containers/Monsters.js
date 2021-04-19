@@ -9,7 +9,7 @@ import SearchInput from "../components/SearchInput";
 
 const titles = ["Ур.", "Название"];
 
-export default function Spells(props) {
+export default function Monsters(props) {
   const { data } = props;
   const [selectedClass, setSelectedClass] = useState(classStorage.get());
   const [selectedLevel, setSelectedLevel] = useState(levelStorage.get());
@@ -28,11 +28,7 @@ export default function Spells(props) {
         cols={[level, name]}
         key={i}
         onClick={() => setSpells([item])}
-        visible={
-          vClass(selectedClass, item) &&
-          vName(searchValue, item) &&
-          vLevel(selectedLevel, item)
-        }
+        visible={vName(searchValue, item) && vLevel(selectedLevel, item)}
       />
     );
   });
