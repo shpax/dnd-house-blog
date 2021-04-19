@@ -28,7 +28,7 @@ export default function Monsters(props) {
         cols={[level, name]}
         key={i}
         onClick={() => setSpells([item])}
-        visible={vName(searchValue, item) && vLevel(selectedLevel, item)}
+        visible={vName(searchValue, item)}
       />
     );
   });
