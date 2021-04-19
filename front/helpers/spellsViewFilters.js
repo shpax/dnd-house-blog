@@ -7,3 +7,6 @@ export const vName = (searchValue, { name }) =>
 
 export const vLevel = (selectedLevel, { level }) =>
   selectedLevel === "" || selectedLevel == level;
+
+export const vSchool = (selectedSchool, { school }) =>
+  selectedSchool === "" || selectedSchool == school;

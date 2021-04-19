@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Table, { TableRow } from "../components/Table";
-import { classStorage, levelStorage } from "../models/spells";
+import { classStorage, levelStorage, schoolStorage } from "../models/spells";
 import SingleSelector from "../components/SingleSelector";
-import { LEVEL_LIST, CLASS_LIST } from "../constants/spellsFilters";
+import {
+  LEVEL_LIST,
+  CLASS_LIST,
+  SCHOOL_LIST,
+} from "../constants/spellsFilters";
 import SpellCard from "../components/cards/Spell";
-import { vClass, vLevel, vName } from "../helpers/spellsViewFilters";
+import { vClass, vLevel, vName, vSchool } from "../helpers/spellsViewFilters";
 import SearchInput from "../components/SearchInput";
 
 const titles = ["Ур.", "Название"];
@@ -13,6 +17,7 @@ export default function Spells(props) {
   const { data } = props;
   const [selectedClass, setSelectedClass] = useState(classStorage.get());
   const [selectedLevel, setSelectedLevel] = useState(levelStorage.get());
+  const [selectedSchool, setSelectedSchool] = useState(schoolStorage.get());
   const [searchValue, setSearchValue] = useState("");
   const [selectedSpells, setSpells] = useState([data[0]]);
 
@@ -31,7 +36,8 @@ export default function Spells(props) {
         visible={
           vClass(selectedClass, item) &&
           vName(searchValue, item) &&
-          vLevel(selectedLevel, item)
+          vLevel(selectedLevel, item) &&
+          vSchool(selectedSchool, item)
         }
       />
     );
@@ -50,10 +56,16 @@ export default function Spells(props) {
             value={selectedClass}
             onSelect={(value) => setSelectedClass(value)}
           />
+
           <SingleSelector
             items={LEVEL_LIST}
             value={selectedLevel}
             onSelect={(value) => setSelectedLevel(value)}
+          />
+          <SingleSelector
+            items={SCHOOL_LIST}
+            value={selectedSchool}
+            onSelect={(value) => setSelectedSchool(value)}
           />
         </div>
       </div>
