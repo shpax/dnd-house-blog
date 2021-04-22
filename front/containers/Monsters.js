@@ -4,7 +4,7 @@ import { classStorage, levelStorage } from "../models/spells";
 import SingleSelector from "../components/SingleSelector";
 import { LEVEL_LIST, CLASS_LIST } from "../constants/spellsFilters";
 import MonsterCard from "../components/cards/Monster";
-import { vClass, vLevel, vName } from "../helpers/spellsViewFilters";
+import { vClass, vLevel, vName } from "../helpers/viewFilters/spells";
 import SearchInput from "../components/SearchInput";
 
 const titles = ["Ур.", "Название"];
