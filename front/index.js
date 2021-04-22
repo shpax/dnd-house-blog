@@ -42,6 +42,28 @@ async function initMonstersApp() {
   }
 }
 
+async function initNotesApp() {
+  const notesContainer = document.getElementById("notes-container");
+
+  if (notesContainer) {
+    const [
+      { default: Notes },
+      { default: itemsData },
+      { default: spellsData },
+    ] = await Promise.all([
+      import("./containers/Notes"),
+      import("../data/items.json"),
+      import("../data/spells.json"),
+    ]);
+
+    ReactDOM.render(
+      <Notes itemsData={itemsData} spellsData={spellsData} />,
+      notesContainer
+    );
+  }
+}
+
 initItemsApp();
 initSpellsApp();
 initMonstersApp();
+initNotesApp();

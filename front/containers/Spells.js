@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Table, { TableRow } from "../components/Table";
 import { classStorage, levelStorage, schoolStorage } from "../models/spells";
+import { setFavouriteSpellState, savedSpells } from "../models/notes";
 import SingleSelector from "../components/SingleSelector";
 import {
   LEVEL_LIST,
@@ -8,13 +9,16 @@ import {
   SCHOOL_LIST,
 } from "../constants/spellsFilters";
 import SpellCard from "../components/cards/Spell";
-import { vClass, vLevel, vName, vSchool } from "../helpers/spellsViewFilters";
+import { vClass, vLevel, vName, vSchool } from "../helpers/viewFilters/spells";
 import SearchInput from "../components/SearchInput";
 
 const titles = ["Ур.", "Название"];
 
 export default function Spells(props) {
   const { data } = props;
+
+  const savedSpellsIdList = savedSpells.get();
+
   const [selectedClass, setSelectedClass] = useState(classStorage.get());
   const [selectedLevel, setSelectedLevel] = useState(levelStorage.get());
   const [selectedSchool, setSelectedSchool] = useState(schoolStorage.get());
@@ -44,7 +48,15 @@ export default function Spells(props) {
   });
 
   const cards = selectedSpells.map((item, i) => (
-    <SpellCard item={item} key={i} />
+    <SpellCard
+      item={item}
+      key={i}
+      isFavorite={savedSpellsIdList.includes(item.id)}
+      onFavouriteChange={(value) => {
+        setFavouriteSpellState(item.id, value);
+        setSpells([...selectedSpells]);
+      }}
+    />
   ));
 
   return (

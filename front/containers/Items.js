@@ -4,7 +4,7 @@ import { qualityStorage } from "../models/items";
 import SingleSelector from "../components/SingleSelector";
 import { QUALITY_LIST } from "../constants/itemsFilters";
 import ItemCard from "../components/cards/Item";
-import { vQuality, vName } from "../helpers/itemsViewFilters";
+import { vQuality, vName } from "../helpers/viewFilters/items";
 import SearchInput from "../components/SearchInput";
 
 const titles = ["Название"];

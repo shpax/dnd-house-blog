@@ -59,6 +59,16 @@ router.get(
   }))
 );
 
+/* NOTES PAGE */
+router.get(
+  "/notes",
+  renderTemplate("page-react", async () => ({
+    settings: getSettings(),
+    page: getPage("notes"),
+    slug: "notes",
+  }))
+);
+
 /* ABOUT PAGE */
 router.get(
   "/about",

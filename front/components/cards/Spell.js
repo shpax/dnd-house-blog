@@ -1,8 +1,8 @@
 import React from "react";
 
-export default function SpellCard({ item }) {
+export default function SpellCard({ item, isFavorite, onFavouriteChange }) {
   return (
-    <div className="card">
+    <div className="card mb-3">
       <div className="card-body">
         <h5 className="card-title">{item.name}</h5>
         <div className="mb-3">
@@ -43,6 +43,24 @@ export default function SpellCard({ item }) {
           className="card-text"
           dangerouslySetInnerHTML={{ __html: item.descriptionHTML }}
         ></div>
+
+        <div className="text-center">
+          {isFavorite ? (
+            <button
+              className="btn btn-light"
+              onClick={() => onFavouriteChange(false)}
+            >
+              Убрать из блокнота
+            </button>
+          ) : (
+            <button
+              className="btn btn-light"
+              onClick={() => onFavouriteChange(true)}
+            >
+              В блокнот
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );
