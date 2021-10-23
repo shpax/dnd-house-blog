@@ -3,7 +3,7 @@ const _ = require("lodash");
 function logError(error) {
   // todo: log this
 
-  console.log(error.message);
+  console.log(error.message, error.stack);
 }
 
 function renderTemplate(view, getContext = Promise.resolve({})) {
